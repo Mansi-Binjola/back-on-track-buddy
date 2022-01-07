@@ -1,0 +1,10 @@
+{
+    "manifest_version": 2,
+    "name": "Back To Track Buddy",
+    "version": "1.0.0",
+    "browser_action": {
+        "default_popup": "homePage.html",
+        "default_title": "Back To Track Buddy"
+        
+    }
+}
