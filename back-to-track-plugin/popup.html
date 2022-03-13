@@ -1,12 +1,12 @@
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Back to Track Buddy</title>
+    <script  rel="javascript" type="text/javascript" src="jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="style.css">
-    <script src="handleData.js"></script>
-    <script src="jquery-3.6.0.min.js"></script>
+    <!--<script src="handleData.js"></script> -->
+    <script  rel="javascript" type="text/javascript" src="popup.js"></script>
+    <script src="background.js"></script>
+    
 </head>
 <body>
     <div class="container">
@@ -22,7 +22,7 @@
     </div>
     <div class="container">
         <input type="text" id="urlName" placeholder="enter link here">
-        <button id="addBtn" class="rounded" >
+        <button id="addLink" class="rounded" >
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
             </svg>
@@ -34,14 +34,14 @@
         <div class="row">
             <h3>Blocked Links</h3>
         </div>
-        <table id="displayLinks">
+        <table id="blockedLinks">
             
         </table>
-        <script src="updateList.js"></script>
+        <!--<script src="updateList.js"></script> -->
     </div>
     <div class="container">
         <a href="background.html">
-            <button id="add-button">
+            <button id="startTracking">
                 get back on track
             </button>
         </a>
