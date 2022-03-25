@@ -1,0 +1,18 @@
+body{
+    background-color: #aeffe7
+}
+#quote {
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+    color: #769642;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#author {
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+    color: #769642;
+    text-align: center;
+    margin-top: 50px;
+}

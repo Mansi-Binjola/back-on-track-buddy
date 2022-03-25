@@ -1,8 +1,7 @@
-  
 $(function(){
     var links = [];
     chrome.storage.sync.get(['blockLinks','trackingStarted'], function(data){
-        // console.log(data.blockLinks == true);
+        
         if(data.blockLinks){
             // var name = $("#name").val();
             // var cl = $("#class").val();
@@ -15,6 +14,14 @@ $(function(){
                 + "</td></tr>";
                 $('#blockedLinks').append(row);
                 links.push(link);
+            }
+            if(data.trackingStarted == false){
+                var contextMenuItem = {
+                    "id": "addLink",
+                    "title": "Add the page link",
+                    "contexts": ["page"]
+                };
+                chrome.contextMenus.create(contextMenuItem);
             }
             
         }
@@ -89,19 +96,22 @@ $(function(){
      $("#startTracking").on('click', function(){
         // localStorage.setItem("trackingStarted", true);
         chrome.storage.sync.set({"trackingStarted": true}, function(){
-            chrome.browserAction.setPopup({
-                popup: 'background.html'
-              });
+           chrome.runtime.sendMessage({todo:"startTracking"});
+           chrome.contextMenus.removeAll();
+        //    chrome.contextMenus.update({id:"addLink", enabled:false});
         });
-
-
      });
      $("#stopTracking").on('click', function(){
         // localStorage.setItem("trackingStarted",false);
         chrome.storage.sync.set({"trackingStarted": false}, function(){
-            chrome.browserAction.setPopup({
-                popup: "popup.html"
-            });
+            chrome.runtime.sendMessage({todo:"stopTracking"});
         });
-      });      
+    //     var contextMenuItem = {
+    //         "id": "addLink",
+    //         "title": "Add the page link",
+    //         "contexts": ["page"]
+    //       };
+      
+    //       chrome.contextMenus.create(contextMenuItem);
+      });
 })
