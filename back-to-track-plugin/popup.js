@@ -1,7 +1,7 @@
 $(function(){
     var links = [];
     chrome.storage.sync.get(['blockLinks','trackingStarted'], function(data){
-        
+        chrome.contextMenus.removeAll();
         if(data.blockLinks){
             // var name = $("#name").val();
             // var cl = $("#class").val();
