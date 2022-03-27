@@ -87,7 +87,7 @@ $(function(){
         var index = $(this).attr('id');
         chrome.storage.sync.get('blockLinks',function(data){
             allLinks = data.blockLinks;
-            allLinks.splice(index,index+1); // doubt
+            allLinks.splice(index,1); // doubt
             chrome.storage.sync.set({'blockLinks':allLinks},function(){
                 close(); // to be changed
             });
